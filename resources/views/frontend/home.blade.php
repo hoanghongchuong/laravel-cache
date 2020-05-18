@@ -2,18 +2,18 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-    	<div class="box-search">
-    		<form class="form-inline">
-			  
+    	<div class="box-search mt-2 w-100 text-center">
+    		<form class="form-inline" method="GET" action="{{route('search')}}">
+
 			  <div class="form-group mb-2">
 			    <label for="" class="sr-only">Search</label>
-			    <input type="text" class="form-control" id="search" placeholder="Search">
+			    <input type="text" class="form-control" name="keyword" id="search" placeholder="Search">
 			  </div>
 			  <button type="submit" class="btn btn-primary mb-2">Search</button>
 			</form>
     	</div>
-        <div class="pagination">
-        	{!! $result->links() !!}
+        <div class="pagination mt-2">
+            {{ $result->links() }}
         </div>
 
         @foreach ($result as $post)
