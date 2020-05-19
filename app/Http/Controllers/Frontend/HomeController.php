@@ -17,12 +17,13 @@ class HomeController extends Controller
     {
         // $posts = new Post();
         $result = $this->post->getAllPost();
-        
+
         return view('frontend.home', compact('result'));
     }
 
-    public function search($keySearch)
+    public function search(Request $request)
     {
-    	
+        $result = $this->post->search($request->keyword);
+        return view('frontend.search', compact('result'));
     }
 }

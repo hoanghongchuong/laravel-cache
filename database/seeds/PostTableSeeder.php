@@ -15,8 +15,8 @@ class PostTableSeeder extends Seeder
         for($i=0; $i< 500000; $i++) {
         	DB::table('posts')->insert([
         		'user_id' => App\User::all()->random()->id,
-        		'title' => str_random(10),
-        		'content' => str_random(200),
+        		'title' => 'Title'.$i.'-'.str_random(10),
+        		'content' => 'Content'.$i.'-'.str_random(200),
         		'image' => '',
         		'created_at' => date('Y-m-d H:i:s'),
         		'updated_at' => date('Y-m-d H:i:s'),

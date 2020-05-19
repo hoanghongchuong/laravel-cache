@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', 'Frontend\HomeController@index');
+Route::get('/post', 'Frontend\HomeController@index');
+Route::get('search', 'Frontend\HomeController@search')->name('search');
