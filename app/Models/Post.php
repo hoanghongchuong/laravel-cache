@@ -12,9 +12,10 @@ class Post extends Model
     ];
 
     public function getAllPost() {
-    	$value = Cache::remember('posts', 60000, function () {
-		    return Post::with('user')->orderBy('id', 'desc')->paginate(100);
-		});
+//    	$value = Cache::remember('posts', 6000, function () {
+//		    return Post::with('user')->orderBy('id', 'desc')->paginate(10);
+//		});
+        $value = Post::with('user')->orderBy('id', 'desc')->paginate(10);
 		return $value;
     }
 
