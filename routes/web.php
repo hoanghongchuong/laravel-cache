@@ -16,4 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/post', 'Frontend\HomeController@index');
+Route::get('/posts/{id}', 'Frontend\HomeController@show');
 Route::get('search', 'Frontend\HomeController@search')->name('search');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

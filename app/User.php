@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Permission;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -40,5 +41,14 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany('App\Models\Post');
+    }
+
+    public function role() {
+        return $this->belongsTo('App\Models\Role');
+    }
+
+    public function hasPermission($permission) {
+        dd($permission);
+//        return optional(optional($this->role)->permissions())->contains($permission);
     }
 }

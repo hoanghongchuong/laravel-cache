@@ -12,7 +12,7 @@ class PostTableSeeder extends Seeder
     public function run()
     {
         // factory(App\Models\Post::class, 10)->create();
-        for($i=0; $i< 500000; $i++) {
+        for($i=0; $i< 100; $i++) {
         	DB::table('posts')->insert([
         		'user_id' => App\User::all()->random()->id,
         		'title' => 'Title'.$i.'-'.str_random(10),
